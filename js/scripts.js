@@ -1,7 +1,3 @@
-// Alert Pop Up // 
+// Task 1.2 - Pokedex 
 
-alert('Hello world') ; 
-
-// Working with Variables // 
-let favoriteFood = 'Burger';
-document.write(favoriteFood) ; 
+let pokemonList = [];  
