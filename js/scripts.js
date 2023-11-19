@@ -9,3 +9,7 @@
     {name: 'Snorlax', height: 2.1, type: 'normal'} 
 
 ];  
+
+for (let i=0; i < pokemonList.length; i++ ) {
+    console.log(i) ;
+}
