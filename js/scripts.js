@@ -11,8 +11,8 @@
 ];  
 
 for (let i=0; i < pokemonList.length; i++ ) {
-    console.log(pokemonList[i].name + "(Height: " , pokemonList[i].height , ")"); 
+    console.log(pokemonList[i].name  + " (Height: " , pokemonList[i].height , ")"); 
 
-    document.write(pokemonList[i].name  + "(Height: " , pokemonList[i].height , ")" );    
+    document.write(pokemonList[i].name + " (Height: " , pokemonList[i].height , ")" );    
     document.write("<br>")
 }
