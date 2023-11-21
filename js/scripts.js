@@ -10,9 +10,23 @@
 
 ];  
 
-for (let i=0; i < pokemonList.length; i++ ) {
-    console.log(pokemonList[i].name  + " (Height: " , pokemonList[i].height , ")"); 
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height >4.5) {
+      // using console.log 
 
-    document.write(pokemonList[i].name + " (Height: " , pokemonList[i].height , ")" );    
-    document.write("<br>")
-}
+     console.log(pokemonList[i].name + " (Height:", pokemonList[i].height, ")- That is a Big Pokemon! ") ;
+      // using  document.write 
+
+      document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ") - That is a Big Pokemon!");
+      document.write("<br>") ;
+  
+   }else {
+      console.log(pokemonList[i].name + " (Height:", pokemonList[i].height, ")") ;
+      
+      document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ")");
+      document.write("<br>") ;
+  
+   }
+  }
+
+
