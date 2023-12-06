@@ -27,21 +27,27 @@
    } 
 
 ];  
+   // creating forEach loop 
 
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height >4.5) {
+   pokemonList.forEach(item => document.write(item.name + ' ' + ' (Height: ' + item.height + ')' + ' (Type: ' + item.type + ')' + '<br>'));
+
+
+
+
+// for (let i = 0; i < pokemonList.length; i++) {
+//     if (pokemonList[i].height >4.5) {
      
-      // using  document.write 
+//       // using  document.write 
 
-      document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ") - That is a Big Pokemon!");
-      document.write("<br>") ;
+//       document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ") - That is a Big Pokemon!");
+//       document.write("<br>") ;
   
-   }else {
+//    }else {
       
-      document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ")");
-      document.write("<br>") ;
+//       document.write(pokemonList[i].name + " (Height: ", pokemonList[i].height, ")");
+//       document.write("<br>") ;
   
-   }
-  }
+//    }
+//   }
 
 
