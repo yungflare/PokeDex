@@ -70,11 +70,15 @@ let pokemonRepository = (function() {
      addListItem: addListItem,
      showDetails: showDetails
    };
-   
+
  })();
+
+ pokemonRepository.add({name: "Eve", height: 1, type: ["normal"] });
+
+ pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
  
- pokemonRepository.getAll().forEach(item => {
-   document.write(item.name + ' || Height: ' + item.height + ' ||' + ' Type: ' + item.type + '<br>');
- });
+});
+
 
  
