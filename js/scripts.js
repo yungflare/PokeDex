@@ -33,7 +33,6 @@ let pokemonRepository = (function() {
        type: 'normal'
      }
    ];
-   
    function add(pokemon) {
      pokemonList.push(pokemon);
    }
