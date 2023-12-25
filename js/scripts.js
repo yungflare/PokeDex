@@ -66,16 +66,7 @@ let pokemonRepository = (function() {
           console.error(e);
         });
         }
-        
-  //   // using addListener pass throught pokemon and button 
-
-  //   addListenerToButton (button, pokemon); 
-  //  }
-  //  function addListenerToButton(button, pokemon) {
-  //   button.addEventListener("click", function () {
-  //     showDetails(pokemon);
-  //   });
-  //  }
+  
  function showDetails(item) {
   pokemonRepository.loadDetails(item).then(function ()
  {

@@ -2,6 +2,11 @@ body {
     background-color: #1D2C5E;
 }
 
+h3 {
+  text-align: center;
+  color: #FFCB05;
+}
+
 h1 {
     color: #FFCB05;
     text-align: center;
