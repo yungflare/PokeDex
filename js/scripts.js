@@ -37,7 +37,8 @@ let pokemonRepository = (function() {
 
     function showLoadingMessage() {
       let loadingMessage = document.createElement('p');
-      loadingMessage.textContent = 'Loading...' ; 
+      loadingMessage.textContent = 'Loading...'; 
+
       document.body.appendChild(loadingMessage);
     }
 
@@ -54,10 +55,12 @@ let pokemonRepository = (function() {
 
     function loadList() {
       showLoadingMessage();
-      return fetch(apiUrl).then(function (response) {
+      return fetch(apiUrl)
+      .then(function (response) {
         hideLoadingMessage(); 
         return response.json(); 
-      }).then(function (json) {
+      })
+      .then(function(json) {
       
         json.results.forEach(function (item) {
           let pokemon = {
@@ -66,7 +69,7 @@ let pokemonRepository = (function() {
           };
           add (pokemon);
           console.log(pokemon)
-        });
+        })
       }).catch(function (e) {
         hideLoadingMessage();
         console.error(e);
@@ -78,14 +81,17 @@ let pokemonRepository = (function() {
       function loadDetails(item) {
         showLoadingMessage();
         let url = item.detailsUrl;
-        return fetch(url).then(function (response) {
+        return fetch(url)
+        .then(function (response) {
           hideLoadingMessage();
           return response.json();
-        }).then(function (details) {
+        })
+        .then(function (details) {
           item.imageUrl = details.sprites.front_default;
           item.height = details.height;
           item.types = details.types; 
-        }).catch(function (e) {
+        })
+        .catch(function (e) {
           hideLoadingMessage();
           console.error(e);
         });
