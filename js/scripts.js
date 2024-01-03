@@ -27,11 +27,10 @@ let pokemonRepository = (function() {
    contentElement.innerText = text; 
 
    let imageElement = document.createElement("img");
-   imageElement.src = ""
-  //  imageElement.setAttribute("src", img);
-  //  imageElement.setAttribute("width", "304");
-  //  imageElement.setAttribute("height", "228");
-  //  imageElement.setAttribute("alt", "Pokemon Image");
+   imageElement.setAttribute("src", img);
+   imageElement.setAttribute("width", "304");
+   imageElement.setAttribute("height", "228");
+   imageElement.setAttribute("alt", "Pokemon Image");
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -135,18 +134,18 @@ let pokemonRepository = (function() {
 
       // adding loadDetails function 
 
-      function loadDetails(item) {
+      function loadDetails(pokemon) {
         showLoadingMessage();
-        let url = item.detailsUrl;
+        let url = pokemon.detailsUrl;
         return fetch(url)
         .then(function (response) {
           hideLoadingMessage();
           return response.json();
         })
         .then(function (details) {
-          item.imageUrl = details.sprites.front_default;
-          item.height = details.height;
-          item.types = details.types; 
+          pokemon.imageUrl = details.sprites.front_default;
+          pokemon.height = details.height;
+          pokemon.types = details.types; 
         })
         .catch(function (e) {
           hideLoadingMessage();
@@ -154,9 +153,12 @@ let pokemonRepository = (function() {
         });
         }
   
- function showDetails(item) {
-   showModal(item.name, ` Height: ${item.height}, Type: ${item.types}`, item.imageUrl);
-  } 
+ function showDetails(pokemon) {
+  pokemonRepository.loadDetails(pokemon).then(function () {
+    let typesString = pokemon.types.map(type => type.type.name).join(`,`);
+   showModal(pokemon.name,`Height: ${pokemon.height} Type: ${typesString}`, pokemon.imageUrl); 
+  });
+}
 
    return {
      add: add,
