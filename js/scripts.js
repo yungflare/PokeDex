@@ -155,11 +155,8 @@ let pokemonRepository = (function() {
         }
   
  function showDetails(item) {
-  pokemonRepository.loadDetails(item).then(function ()
- {
- showModal(item.name, item.name + " Height is: " + item.name + " Type: ", item.img )
-});
- }
+   showModal(item.name, ` Height: ${item.height}, Type: ${item.types}`, item.imageUrl);
+  } 
 
    return {
      add: add,
