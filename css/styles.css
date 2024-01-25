@@ -1,0 +1,23 @@
+.container, body {
+    background-color: #1d2c5e;
+}
+
+h1 {
+    text-align: center;
+    color: #ffcb05;
+    font-size: 80px;
+    text-shadow: 0 0 10px #c7a008;
+    animation: shadowMover 2s infinite alternate;
+}
+
+
+@keyframes shadowMover {
+    from {
+      text-shadow: 0 0 10px #c7a008;
+    }
+  
+    to {
+      text-shadow: 10px 10px 20px #3466af;
+      text-decoration: none;
+    }
+  }
