@@ -13,7 +13,7 @@
     
     function showDetails(pokemon) {
       loadDetails(pokemon).then(function () {
-        showModal(pokemon.name, pokemon.height);
+        showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
       });
     }
   
@@ -21,10 +21,14 @@
    function showModal(title, text, img) {
     let name = document.querySelector("#pokemonModalLabel");
     let height = document.querySelector("#modal-height");
+    let image = document.createElement("img");
+    image.src = img;
+
     name.innerHTML = "";
     height.innerHTML= "";
     name.innerHTML = title;
     height.innerHTML = `Height: ${text}`;
+    height.appendChild(image);
    }
 
 
@@ -42,7 +46,7 @@
  
 
     button.addEventListener("click", function() {
-      showModal(pokemon);
+      showDetails(pokemon);
     });
 
     newPokemon.append(button);
