@@ -1,15 +1,41 @@
-.container, body {
-    background-color: #1d2c5e;
-}
-
 h1 {
-    text-align: center;
-    color: #ffcb05;
-    font-size: 80px;
-    text-shadow: 0 0 10px #c7a008;
-    animation: shadowMover 2s infinite alternate;
+  text-align: center;
+  color: #ffcb05;
+  font-size: 80px;
+  text-shadow: 0 0 10px #c7a008;
+  animation: shadowMover 2s infinite alternate;
 }
 
+ body {
+    background-color: #21386e;
+}
+.list-group-item {
+  background-color: #c7a008;
+  padding: 5px;
+}
+.modal-header, .close {
+  background-color: #21386e;
+  color: #ffde00;
+  text-transform: uppercase;
+}
+.modal-body {
+  background-color: #3466af;
+  color: #ffcb05;
+  font-size: 20px;
+  text-align: center;
+}
+.modal-footer, .btn.btn-secondary {
+  background-color: #21386e;
+  color: #ffcb05;
+}
+.btn-primary {
+  background-color: #21386e; 
+  text-transform: capitalize;
+  color: #ffcb05; 
+  display: inline-block;
+  border-radius: 12px;
+  cursor: pointer;
+}
 
 @keyframes shadowMover {
     from {
