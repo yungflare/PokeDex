@@ -13,6 +13,7 @@ h1 {
   background-color: #c7a008;
   padding: 5px;
 }
+
 .modal-header, .close {
   background-color: #21386e;
   color: #ffde00;
@@ -21,8 +22,14 @@ h1 {
 .modal-body {
   background-color: #3466af;
   color: #ffcb05;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
+  text-transform: capitalize;
+}
+.img {
+  float: right;
+  width: 150px;
+  height: auto;
 }
 .modal-footer, .btn.btn-secondary {
   background-color: #21386e;
@@ -43,7 +50,7 @@ h1 {
     }
   
     to {
-      text-shadow: 10px 10px 20px #3466af;
+      text-shadow: 10px 10px 20px #ffcb05;
       text-decoration: none;
     }
   }

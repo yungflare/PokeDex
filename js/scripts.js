@@ -14,22 +14,30 @@
 
         function showDetails(pokemon) {
           loadDetails(pokemon).then(function () {
-            showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+            showModal(pokemon.name, pokemon.height, pokemon.imageUrl, pokemon.types);
           });
         }
 
 
-        function showModal(title, text, img) {
+        function showModal(title, height, img, types) {
           let name = document.querySelector("#pokemonModalLabel");
-          let height = document.querySelector("#modal-height");
+          let heightElement = document.querySelector("#modal-height");
+          let typesElement = document.querySelector("#modal-types");
           let image = document.createElement("img");
           image.src = img;
+          image.classList.add("img");
 
           name.innerHTML = "";
-          height.innerHTML = "";
+          heightElement.innerHTML = "";
+          typesElement.innerHTML = "";
           name.innerHTML = title;
-          height.innerHTML = `Height: ${text}`;
-          height.appendChild(image);
+          heightElement.innerHTML = `Height: ${height}`;
+        
+          let typeNames = types.map(function(type) {
+            return type.type.name;
+          }).join (" , ");
+          typesElement.innerHTML = `Type: ${typeNames}`;
+          heightElement.appendChild(image);
         }
 
 
