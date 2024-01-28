@@ -14,15 +14,16 @@
 
         function showDetails(pokemon) {
           loadDetails(pokemon).then(function () {
-            showModal(pokemon.name, pokemon.height, pokemon.imageUrl, pokemon.types);
+            showModal(pokemon.name, pokemon.height, pokemon.imageUrl, pokemon.types, pokemon.abilities);
           });
         }
 
 
-        function showModal(title, height, img, types) {
+        function showModal(title, height, img, types, abilities) {
           let name = document.querySelector("#pokemonModalLabel");
           let heightElement = document.querySelector("#modal-height");
           let typesElement = document.querySelector("#modal-types");
+          let abilitiesElement = document.querySelector("#modal-abilities");
           let image = document.createElement("img");
           image.src = img;
           image.classList.add("img");
@@ -30,13 +31,19 @@
           name.innerHTML = "";
           heightElement.innerHTML = "";
           typesElement.innerHTML = "";
+          abilitiesElement.innerHTML= "";
           name.innerHTML = title;
-          heightElement.innerHTML = `Height: ${height}`;
-        
+          heightElement.innerHTML= `Height: ${height}m `;
+
           let typeNames = types.map(function(type) {
             return type.type.name;
           }).join (" , ");
           typesElement.innerHTML = `Type: ${typeNames}`;
+
+          let abilityNames = abilities.map(function(ability){
+            return ability.ability.name;
+          }).join(" , ")
+          abilitiesElement.innerHTML = `Abilities: ${abilityNames}`;
           heightElement.appendChild(image);
         }
 
@@ -117,6 +124,7 @@
               pokemon.imageUrl = details.sprites.front_default;
               pokemon.height = details.height;
               pokemon.types = details.types;
+              pokemon.abilities = details.abilities;
             })
             .catch(function (e) {
               hideLoadingMessage();
