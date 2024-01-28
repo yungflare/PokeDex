@@ -1,0 +1,68 @@
+.modal-body,
+h1 {
+    text-align: center
+}
+
+h1 {
+    color: #ffcb05;
+    font-size: 80px;
+    text-shadow: 0 0 10px #c7a008;
+    animation: 2s infinite alternate shadowMover
+}
+
+body {
+    background-color: #21386e
+}
+
+.list-group-item {
+    background-color: #c7a008;
+    padding: 5px
+}
+
+.close,
+.modal-header {
+    background-color: #21386e;
+    color: #ffde00;
+    text-transform: uppercase
+}
+
+.btn-primary,
+.modal-body {
+    text-transform: capitalize
+}
+
+.modal-body {
+    background-color: #3466af;
+    color: #ffcb05;
+    font-size: 20px
+}
+
+.btn-primary,
+.btn.btn-secondary,
+.modal-footer {
+    background-color: #21386e;
+    color: #ffcb05
+}
+
+.img {
+    float: right;
+    width: 110px;
+    height: auto
+}
+
+.btn-primary {
+    display: inline-block;
+    border-radius: 12px;
+    cursor: pointer
+}
+
+@keyframes shadowMover {
+    from {
+        text-shadow: 0 0 10px #c7a008
+    }
+
+    to {
+        text-shadow: 10px 10px 20px #ffcb05;
+        text-decoration: none
+    }
+}
