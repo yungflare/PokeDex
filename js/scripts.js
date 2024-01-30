@@ -37,12 +37,12 @@
 
           let typeNames = types.map(function(type) {
             return type.type.name;
-          }).join (" , ");
+          }).join (",");
           typesElement.innerHTML = `Type: ${typeNames}`;
 
           let abilityNames = abilities.map(function(ability){
             return ability.ability.name;
-          }).join(" , ")
+          }).join(",")
           abilitiesElement.innerHTML = `Abilities: ${abilityNames}`;
           heightElement.appendChild(image);
         }

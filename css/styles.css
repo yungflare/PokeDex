@@ -17,7 +17,7 @@ h1 {
 .modal-header, .close {
   background-color: #21386e;
   color: #ffde00;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 .modal-body {
   background-color: #3466af;
@@ -28,8 +28,8 @@ h1 {
 }
 .img {
   float: right;
-  width: 110px;
-  height: auto;
+  width: 120px;
+  height: 120px;
 }
 .modal-footer, .btn.btn-secondary {
   background-color: #21386e;
